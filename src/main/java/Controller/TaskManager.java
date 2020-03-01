@@ -12,10 +12,19 @@ public class TaskManager {
 	private HashMap<Integer, Task> archived;
 	private static StatsManager stats;
 	private static int idCount;
+	private int completed;
+	private final int goal = 5;
+
+	enum STATUS{
+		NONE,
+		SOME,
+		ALL
+	};
 
 	public TaskManager(){
 		taskList = new HashMap<Integer, Task>();
 		archived = new HashMap<Integer, Task>();
+		completed = 0;
 		stats = new StatsManager();
 		idCount = 0;
 	}
@@ -23,14 +32,15 @@ public class TaskManager {
 	public void completeTask(int id){
 		Task t = taskList.get(id);
 		stats.updateStats(t);
+		completed++;
 		removeTask(t.getId());
 	}
 
-	public void addTask(String task, int stars){
+	public void addTask(String task){
 
 		int id = idCount;
 		idCount++;
-		Task t = new Task(id, task, stars);
+		Task t = new Task(id, task);
 
 		taskList.put(id, t);
 
@@ -45,12 +55,15 @@ public class TaskManager {
 		archived.put(t.getId(), t);
 	}
 
-	public void alterTask(int id, String newData, int newStars){
+	public void alterTask(int id, String newData){
 		Task t = taskList.get(id);
-
 		t.setData(newData);
-		t.setNumStars(newStars);
+	}
 
+	public STATUS getStatus(){
+		if(completed == 0) return STATUS.NONE;
+		else if(completed < goal) return STATUS.SOME;
+		else return STATUS.ALL;
 	}
 
 	public Collection<Task> getTaskList(){ return taskList.values(); }

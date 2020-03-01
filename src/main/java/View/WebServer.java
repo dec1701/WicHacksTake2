@@ -38,6 +38,10 @@ public class WebServer {
 
 		//Controller classes
 		this.taskManager = taskManager;
+		taskManager.addTask("Buy Groceries");
+		taskManager.addTask("Do Laundry");
+		taskManager.addTask("???");
+		taskManager.addTask("Profit.");
 		this.statsManager = statsManager;
 	}
 
