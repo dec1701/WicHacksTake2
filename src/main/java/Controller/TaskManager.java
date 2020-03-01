@@ -15,7 +15,7 @@ public class TaskManager {
 	private int completed;
 	private final int goal = 5;
 
-	enum STATUS{
+	public enum STATUS{
 		NONE,
 		SOME,
 		ALL

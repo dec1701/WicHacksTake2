@@ -21,7 +21,7 @@ public class PostAddTaskRoute implements Route {
 
 		Map<String, Object> vm = new HashMap<String, Object>();
 
-		taskManager.addTask(request.queryParams("desc"));
+		taskManager.addTask(request.queryParams("data"));
 
 		vm.put("title", "Add");
 

@@ -21,10 +21,10 @@ public class GetEditTaskRoute implements Route {
 
 		Map<String, Object> vm = new HashMap<>();
 
-		int taskId = Integer.parseInt(request.queryParams("taskId"));
-		Task currentTask = taskManager.getTask(taskId);
+		//int taskId = Integer.parseInt(request.queryParams("taskId"));
+		//Task currentTask = taskManager.getTask(taskId);
 
-		vm.put("task", currentTask);
+		//vm.put("task", currentTask);
 
 		vm.put("title", "Edit");
 

@@ -23,7 +23,7 @@ public class PostCompleteTaskRoute implements Route {
 		taskManager.completeTask(taskId);
 		vm.put("title", "Complete");
 
-		response.redirect(WebServer.HOME_URL);
+		response.redirect(WebServer.TASKS_URL);
 		return null;
 	}
 }
