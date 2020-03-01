@@ -12,8 +12,6 @@ import static spark.Spark.staticFileLocation;
 public class WebServer {
 	//URLs
 	public static final String HOME_URL = "/";
-	public static final String SETTINGS_URL = "/Settings";
-	public static final String STATS_URL = "/Stats";
 	public static final String TASKS_URL = "/Tasks";
 	public static final String ADD_TASK_URL = "/Add";
 	public static final String COMPLETE_TASK_URL = "/Complete";
@@ -50,13 +48,12 @@ public class WebServer {
 		staticFileLocation("/public");
 
 		get(HOME_URL, new GetHomeRoute(templateEngine, taskManager, statsManager));
-		get(SETTINGS_URL, new GetSettingsRoute(templateEngine));
-		get(STATS_URL, new GetStatsRoute(templateEngine, statsManager, taskManager));
 		get(TASKS_URL, new GetTasksRoute(templateEngine, taskManager));
+		get(EDIT_TASK_URL, new GetEditTaskRoute(templateEngine, taskManager));
 		post(ADD_TASK_URL, new PostAddTaskRoute(templateEngine, taskManager));
 		post(COMPLETE_TASK_URL, new PostCompleteTaskRoute(templateEngine, taskManager));
-		post(EDIT_TASK_URL, new PostEditTaskRoute(templateEngine));
 		post(REMOVE_TASK_URL, new PostRemoveTaskRoute(templateEngine));
 		post(TASKS_URL, new PostTasksRoute(templateEngine, taskManager));
+		post(EDIT_TASK_URL, new PostEditTaskRoute(templateEngine, taskManager));
 	}
 }

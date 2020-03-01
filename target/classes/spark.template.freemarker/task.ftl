@@ -12,7 +12,6 @@
 
     <style>
 
-
         body{
     background: rgb(82,72,156);
     background: linear-gradient(0deg, rgba(82, 52, 140,1) 0%, rgba(118, 118, 255,1) 100%);
@@ -28,7 +27,6 @@
 .add{
     float: right;
 }
-
 
 .taskboxes{
     text-align: center;
@@ -61,6 +59,8 @@ h5{
     color: white;
     opacity: 1;
 }
+
+
 h2{
     font-family: 'Libre Franklin';
     font-size: 250%;

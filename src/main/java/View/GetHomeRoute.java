@@ -30,18 +30,27 @@ public class GetHomeRoute implements Route {
 
 		//View Model: stores short-term info to be displayed in html page
 		Map<String, Object> vm = new HashMap<String, Object>();
+		TaskManager.STATUS status = taskManager.getStatus();
 
-		//Calculating progress
-		if(taskManager.getNumTasks() == 0){
-			vm.put("percentDone", 1);
-		}
-		else{
-			vm.put("percentDone", (double)(statsManager.getTotalTasks()) /
-					(statsManager.getTotalTasks() + taskManager.getNumTasks()));
+		String viewName = "";
+
+		switch (status){
+
+			case NONE:
+				viewName = "home1.ftl";
+				break;
+
+			case SOME:
+				viewName = "home2.ftl";
+				break;
+
+			case ALL:
+				viewName = "home3.ftl";
+				break;
 		}
 
 		vm.put("title", "Home");
 
-		return templateEngine.render(new ModelAndView(vm, "home.ftl"));
+		return templateEngine.render(new ModelAndView(vm, viewName));
 	}
 }

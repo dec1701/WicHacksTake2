@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 View\PostSubmitEditRoute.class
 View\PostTasksRoute.class
 View\WebServer.class
 Controller\TaskManager$STATUS.class
 Controller\TaskManager.class
+=======
+View/WebServer.class
+View/GetHomeRoute$1.class
+Controller/TaskManager.class
+Controller/TaskManager$STATUS.class
+>>>>>>> 6a9c44f34998fda56b710f9a4ca7408cc968d4dc

@@ -33,7 +33,6 @@ public class GetEditTaskRoute implements Route {
 		Task currentTask = taskManager.getTask(taskId);
 
 		vm.put("task", currentTask);
-		vm.put("title", "Edit");
 
 		return templateEngine.render(new ModelAndView(vm, "edit.ftl"));
 	}

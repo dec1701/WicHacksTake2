@@ -26,7 +26,7 @@ public class PostAddTaskRoute implements Route {
 
 		//View Model: stores short-term info to be displayed in html page
 		Map<String, Object> vm = new HashMap<String, Object>();
-		taskManager.addTask(request.queryParams("desc"));
+		taskManager.addTask(request.queryParams("data"));
 
 		vm.put("title", "Add");
 
