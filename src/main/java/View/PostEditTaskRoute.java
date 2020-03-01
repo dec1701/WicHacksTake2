@@ -17,6 +17,7 @@ public class PostEditTaskRoute implements Route {
 		Map<String, Object> vm = new HashMap<String, Object>();
 		vm.put("title", "Edit");
 
-		return templateEngine.render(new ModelAndView(vm, "edit.ftl"));
+		response.redirect(WebServer.HOME_URL);
+		return null;
 	}
 }

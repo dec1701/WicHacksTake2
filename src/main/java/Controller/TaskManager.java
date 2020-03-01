@@ -2,7 +2,9 @@ package Controller;
 
 import Model.Task;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 public class TaskManager {
 
@@ -50,5 +52,9 @@ public class TaskManager {
 		t.setNumStars(newStars);
 
 	}
+
+	public Collection<Task> getTaskList(){ return taskList.values(); }
+
+	public int getNumTasks(){ return taskList.size(); }
 
 }

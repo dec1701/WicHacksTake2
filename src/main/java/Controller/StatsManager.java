@@ -26,5 +26,7 @@ public class StatsManager {
 
     }
 
+    public int getTotalTasks(){ return totalTasks; }
+
 
 }

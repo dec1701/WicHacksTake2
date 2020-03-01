@@ -1,5 +1,7 @@
+import Controller.StatsManager;
 import Controller.TaskManager;
 import com.google.gson.Gson;
+import org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection;
 import spark.Spark;
 
 import View.WebServer;
@@ -15,8 +17,9 @@ public class Application {
 
 		//Controller classes
 		final TaskManager taskManager = new TaskManager();
+		final StatsManager statsManager = new StatsManager();
 
-		final WebServer webServer = new WebServer(templateEngine, gson, taskManager);
+		final WebServer webServer = new WebServer(templateEngine, gson, taskManager, statsManager);
 
 		final Application app = new Application(webServer);
 		app.initialize();
