@@ -1,0 +1,45 @@
+body{
+    background: rgb(82,72,156);
+    background: linear-gradient(0deg, rgba(102,51,153,1) 0%, rgba(102,102,153) 49%, rgba(153,153,255,1) 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+
+.title{
+}
+
+.taskboxes{
+    text-align: center;
+    /* background-color: #cc99cc; */
+    background-color: midnightblue;
+    height: 50px;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
+    opacity: .65;
+    margin: 20px;
+    padding: 20px;
+    margin-left: 0;
+
+}
+
+h5{
+    margin-top: 10px;
+    font-family: 'Libre Franklin';
+    font-size: 28px;
+    text-align: left;
+    color: white;
+}
+h2{
+    font-family: 'Poiret One';
+    height: 50px;
+    width: 500px;
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    background-color: #99ffff;
+
+}
+
+a{
+    font-family: 'Poiret One';
+}
