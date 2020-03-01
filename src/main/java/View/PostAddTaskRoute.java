@@ -25,6 +25,7 @@ public class PostAddTaskRoute implements Route {
 
 		vm.put("title", "Add");
 
-		return templateEngine.render(new ModelAndView(vm, "add.ftl"));
+		response.redirect(WebServer.HOME_URL);
+		return null;
 	}
 }

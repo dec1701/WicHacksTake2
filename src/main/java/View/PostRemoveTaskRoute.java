@@ -16,6 +16,7 @@ public class PostRemoveTaskRoute implements Route {
 		Map<String, Object> vm = new HashMap<String, Object>();
 		vm.put("title", "Remove");
 
-		return templateEngine.render(new ModelAndView(vm, "remove.ftl"));
+		response.redirect(WebServer.HOME_URL);
+		return null;
 	}
 }
