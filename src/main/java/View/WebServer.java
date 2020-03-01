@@ -16,6 +16,7 @@ public class WebServer {
 	public static final String ADD_TASK_URL = "/Add";
 	public static final String COMPLETE_TASK_URL = "/Complete";
 	public static final String EDIT_TASK_URL = "/Edit";
+	public static final String EDIT_SUBMIT_URL = "/SubmitEdit";
 	public static final String REMOVE_TASK_URL = "/Remove";
 
 
@@ -49,11 +50,11 @@ public class WebServer {
 
 		get(HOME_URL, new GetHomeRoute(templateEngine, taskManager, statsManager));
 		get(TASKS_URL, new GetTasksRoute(templateEngine, taskManager));
-		get(EDIT_TASK_URL, new GetEditTaskRoute(templateEngine, taskManager));
 		post(ADD_TASK_URL, new PostAddTaskRoute(templateEngine, taskManager));
 		post(COMPLETE_TASK_URL, new PostCompleteTaskRoute(templateEngine, taskManager));
 		post(REMOVE_TASK_URL, new PostRemoveTaskRoute(templateEngine));
 		post(TASKS_URL, new PostTasksRoute(templateEngine, taskManager));
 		post(EDIT_TASK_URL, new PostEditTaskRoute(templateEngine, taskManager));
+		post(EDIT_SUBMIT_URL, new PostSubmitEditRoute(templateEngine, taskManager));
 	}
 }

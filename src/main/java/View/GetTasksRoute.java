@@ -24,7 +24,9 @@ public class GetTasksRoute implements Route {
 
 	//Perform operations specified by http request
 	public Object handle(Request request, Response response){
-		//final Session httpSession = request.session();
+		final Session httpSession = request.session();
+
+		httpSession.attribute("taskId", null);
 
 		//View Model: stores short-term info to be displayed in html page
 		Map<String, Object> vm = new HashMap<String, Object>();

@@ -25,14 +25,12 @@ public class PostEditTaskRoute implements Route {
 
 		int taskId = Integer.parseInt(request.queryParams("taskId"));
 
+		httpSession.attribute("taskId", taskId);
+
 		String data = request.queryParams("data");
 
-		taskManager.alterTask(taskId, data);
-
 		//View Model: stores short-term info to be displayed in html page
-		Map<String, Object> vm = new HashMap<String, Object>();
-
-
+		Map<String, Object> vm = new HashMap<>();
 
 		vm.put("title", "Edit");
 

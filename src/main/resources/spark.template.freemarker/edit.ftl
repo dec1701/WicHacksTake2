@@ -42,8 +42,21 @@ input[type=text], select {
 
 <body>
 
-<form id = "editTask" action = "/Edit" method = "POST">
-        <input type = "text" id = "data">
+
+<form method="post">
+        <input type="text" id="newData" name="newData">
+
+        <script>
+                function getInputValue(){
+                    // Selecting the input element and get its value
+                    var inputVal = document.getElementById("newData").value;
+
+                    // Displaying the value
+                    alert(inputVal);
+                }
+        </script>
+
+        <input type="submit" onclick="form.action='/SubmitEdit?data="document.getElementById("newData").value;"';">
 </form>
 
 </body>

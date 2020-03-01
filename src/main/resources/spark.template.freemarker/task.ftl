@@ -152,7 +152,7 @@ function closeNav() {
     </div>
 
 
-<if tasks??>
+<#if tasks??>
     <#list tasks as task>
         <div class = "taskboxes">
             <form action="./Tasks?taskId=${task.getId()}" method="post">
@@ -174,7 +174,7 @@ function closeNav() {
             </div>
         </div>
   </#list>
-</if>
+</#if>
 
 
 </body>
