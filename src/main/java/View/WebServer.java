@@ -2,6 +2,7 @@ package View;
 
 import static spark.Spark.*;
 
+import Controller.TaskManager;
 import spark.TemplateEngine;
 import com.google.gson.Gson;
 
@@ -19,15 +20,16 @@ public class WebServer {
 	private final Gson gson;
 
 	//Controller classes
+	private final TaskManager taskManager;
 
 
-	public WebServer(final TemplateEngine templateEngine, final Gson gson){
+	public WebServer(final TemplateEngine templateEngine, final Gson gson, TaskManager taskManager){
 		//utils
 		this.templateEngine = templateEngine;
 		this.gson = gson;
 
 		//Controller classes
-
+		this.taskManager = taskManager;
 	}
 
 	public void initialize(){
