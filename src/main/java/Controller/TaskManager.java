@@ -7,14 +7,27 @@ import java.util.HashMap;
 public class TaskManager {
 
 	private HashMap<Integer, Task> taskList;
+	private HashMap<Integer, Task> archived;
+	private static StatsManager stats;
+	private static int idCount;
 
 	public TaskManager(){
-		//taskList = new HashMap<>();
+		taskList = new HashMap<Integer, Task>();
+		archived = new HashMap<Integer, Task>();
+		stats = new StatsManager();
+		idCount = 0;
+	}
+
+	public void completeTask(int id){
+		Task t = taskList.get(id);
+		stats.updateStats(t);
+		removeTask(t.getId());
 	}
 
 	public void addTask(String task, int stars){
 
-		int id = taskList.size()+1;
+		int id = idCount;
+		idCount++;
 		Task t = new Task(id, task, stars);
 
 		taskList.put(id, t);
@@ -25,8 +38,9 @@ public class TaskManager {
 		return taskList.get(id);
 	}
 
-	public void removeTask(int id){
-		taskList.remove(id);
+	public void removeTask(int id) {
+		Task t = taskList.remove(id);
+		archived.put(t.getId(), t);
 	}
 
 	public void alterTask(int id, String newData, int newStars){
