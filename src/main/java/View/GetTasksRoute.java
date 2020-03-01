@@ -17,10 +17,10 @@ public class GetTasksRoute implements Route {
 	}
 
 	public Object handle(Request request, Response response){
-		final Session httpSession = request.session();
+		//final Session httpSession = request.session();
 
 		Map<String, Object> vm = new HashMap<String, Object>();
-		vm.put("tasks", taskManager.getTaskList());
+		//vm.put("tasks", taskManager.getTaskList());
 		vm.put("title", "Tasks");
 
 		return templateEngine.render(new ModelAndView(vm, VIEW_NAME));

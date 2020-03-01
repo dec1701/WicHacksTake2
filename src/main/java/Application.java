@@ -1,5 +1,6 @@
 import Controller.StatsManager;
 import Controller.TaskManager;
+import View.GetTasksRoute;
 import com.google.gson.Gson;
 import freemarker.template.Configuration;
 import org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection;
@@ -9,15 +10,23 @@ import View.WebServer;
 import spark.TemplateEngine;
 import spark.template.freemarker.FreeMarkerEngine;
 
+import java.io.File;
+import java.io.IOException;
+
 
 public class Application {
 
 	public static void main(String[] args) {
 
-		//Configuration config = new Configuration();
-		//config.setClassForTemplateLoading(GetTasksRoute.class, "/src/resources/spark.template.freemarker");
+		Configuration config = new Configuration();
+		try {
+			config.setDirectoryForTemplateLoading(new File("src/main/resources/spark.template.freemarker"));
+		}catch (IOException e){}
 
-		final TemplateEngine templateEngine = new FreeMarkerEngine();
+
+        //freemarker.template.Configuration.
+
+		final TemplateEngine templateEngine = new FreeMarkerEngine(config);
 		final Gson gson = new Gson();
 
 		//Controller classes
