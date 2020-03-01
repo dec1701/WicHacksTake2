@@ -8,9 +8,109 @@
 
 <link rel="stylesheet" href="taskcss.css">
 
-<title>${title}</title>
+<title>Task Manager</title>
 
     <style>
+
+
+    body{
+        background: rgb(82,72,156);
+        background: linear-gradient(0deg, rgba(102,51,153,1) 0%, rgba(102,102,153) 49%, rgba(153,153,255,1) 100%);
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+    }
+
+    .title{
+    }
+
+    .taskboxes{
+        text-align: center;
+        /* background-color: #cc99cc; */
+        background-color: midnightblue;
+        height: 50px;
+        border-top-right-radius: 300px;
+        border-bottom-right-radius: 300px;
+        opacity: .65;
+        margin: 20px;
+        padding: 20px;
+        margin-left: 0;
+
+    }
+
+    h5{
+        margin-top: 10px;
+        font-family: 'Libre Franklin';
+        font-size: 28px;
+        text-align: left;
+        color: white;
+    }
+    h2{
+        font-family: 'Poiret One';
+        height: 50px;
+        width: 500px;
+        font-size: 40px;
+        text-align: center;
+        color: black;
+
+
+    }
+
+    a{
+        font-family: 'Poiret One';
+    }
+
+
+        body{
+    background: rgb(82,72,156);
+    background: linear-gradient(0deg, rgba(82, 52, 140,1) 0%, rgba(118, 118, 255,1) 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+
+}
+
+.title{
+    margin-bottom: 60px;
+}
+
+.add{
+    float: right;
+}
+
+
+.taskboxes{
+    text-align: center;
+    /* background-color: #cc99cc; */
+    background-color: black;
+    height: 50px;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
+    opacity: .65;
+    margin: 20px;
+    padding: 20px;
+    margin-left: 0;
+}
+
+h5{
+    margin-top: 10px;
+    font-family: 'Libre Franklin';
+    font-size: 28px;
+    text-align: left;
+    color: white;
+    opacity: 1;
+}
+h2{
+    font-family: 'Libre Franklin';
+    font-size: 40px;
+    text-align: left;
+    color: whitesmoke;
+    width: 50px;
+}
+
+a{
+    font-family: 'Poiret One';
+}
+
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -60,8 +160,6 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">Home</a>
   <a href="#">Tasks</a>
-  <a href="#">Stats</a>
-  <a href="#">Settings</a>
 </div>
 
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
@@ -76,10 +174,14 @@ function closeNav() {
 }
 </script>
 
+<div class = "add">
+     <h2>+</h2>
+    </div>
 
  <div class = "title">
-     <h2>TASKS</h2>
+     <h2>Tasks</h2>
     </div>
+
 
  <div class = "taskboxes">
      <h5>Get Groceries</h5>
@@ -90,4 +192,4 @@ function closeNav() {
     </div>
 
 </body>
-</html>
+

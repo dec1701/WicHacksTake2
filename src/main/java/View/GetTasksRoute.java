@@ -21,7 +21,7 @@ public class GetTasksRoute implements Route {
 
 		Map<String, Object> vm = new HashMap<String, Object>();
 		//vm.put("tasks", taskManager.getTaskList());
-		vm.put("title", "Tasks");
+		//vm.put("title", "Tasks");
 
 		return templateEngine.render(new ModelAndView(vm, VIEW_NAME));
 	}
