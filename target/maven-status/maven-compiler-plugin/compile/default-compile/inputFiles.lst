@@ -3,10 +3,10 @@ C:\WicHacksTake2\src\main\java\View\GetStatsRoute.java
 C:\WicHacksTake2\src\main\java\View\PostRemoveTaskRoute.java
 C:\WicHacksTake2\src\main\java\Model\Task.java
 C:\WicHacksTake2\src\main\java\Controller\TaskManager.java
-C:\WicHacksTake2\src\main\java\Model\Planner.java
 C:\WicHacksTake2\src\main\java\View\GetHomeRoute.java
 C:\WicHacksTake2\src\main\java\View\GetSettingsRoute.java
 C:\WicHacksTake2\src\main\java\View\PostAddTaskRoute.java
+C:\WicHacksTake2\src\main\java\Controller\StatsManager.java
 C:\WicHacksTake2\src\main\java\View\PostCompleteTaskRoute.java
 C:\WicHacksTake2\src\main\java\View\GetTasksRoute.java
 C:\WicHacksTake2\src\main\java\View\WebServer.java
