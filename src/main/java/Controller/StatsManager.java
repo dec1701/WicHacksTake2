@@ -19,9 +19,9 @@ public class StatsManager {
 
     public void updateStats(Task t){
         totalTasks++;
-        totalStars += t.getNumStars();
+        //totalStars += t.getNumStars();
 
-        averageStars = (double) totalTasks/totalStars;
+        //averageStars = (double) totalTasks/totalStars;
 
 
     }
