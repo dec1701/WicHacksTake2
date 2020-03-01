@@ -33,7 +33,7 @@ public class PostCompleteTaskRoute implements Route {
 
 		vm.put("title", "Complete");
 
-		response.redirect(WebServer.HOME_URL);
+		response.redirect(WebServer.TASKS_URL);
 		return null;
 	}
 }

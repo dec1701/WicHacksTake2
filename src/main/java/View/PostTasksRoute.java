@@ -6,15 +6,15 @@ import spark.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PostAddTaskRoute implements Route {
+public class PostTasksRoute implements Route{
 	//TemplateEngine for rendering html pages
 	private final TemplateEngine templateEngine;
 
-	//TaskManager for adding task
+	//TaskManager for retrieving specific tasks
 	private final TaskManager taskManager;
 
 	//Constructor
-	public PostAddTaskRoute(TemplateEngine templateEngine, TaskManager taskManager){
+	public PostTasksRoute(TemplateEngine templateEngine, TaskManager taskManager){
 		this.templateEngine = templateEngine;
 		this.taskManager = taskManager;
 	}
@@ -26,11 +26,13 @@ public class PostAddTaskRoute implements Route {
 
 		//View Model: stores short-term info to be displayed in html page
 		Map<String, Object> vm = new HashMap<String, Object>();
-		taskManager.addTask(request.queryParams("desc"));
 
-		vm.put("title", "Add");
+		//unique identifying number of desired task
+		int taskId = Integer.parseInt(request.queryParams("taskId"));
 
-		response.redirect(WebServer.EDIT_TASK_URL);
-		return null;
+		vm.put("tasks", taskManager.getTaskList());
+		vm.put("inputId", taskId);
+
+		return templateEngine.render(new ModelAndView(vm, "task.ftl"));
 	}
 }

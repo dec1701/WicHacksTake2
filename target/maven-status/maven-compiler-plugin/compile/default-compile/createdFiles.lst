@@ -1,3 +1,5 @@
-View/WebServer.class
-Controller/TaskManager.class
-Controller/TaskManager$STATUS.class
+View\PostSubmitEditRoute.class
+View\PostTasksRoute.class
+View\WebServer.class
+Controller\TaskManager$STATUS.class
+Controller\TaskManager.class

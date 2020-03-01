@@ -29,7 +29,7 @@ public class GetTasksRoute implements Route {
 		//View Model: stores short-term info to be displayed in html page
 		Map<String, Object> vm = new HashMap<String, Object>();
 		vm.put("tasks", taskManager.getTaskList());
-		//vm.put("title", "Tasks");
+		vm.put("inputId", -1);
 
 		return templateEngine.render(new ModelAndView(vm, VIEW_NAME));
 	}

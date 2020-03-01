@@ -20,9 +20,10 @@ public class PostEditTaskRoute implements Route {
 		//View Model: stores short-term info to be displayed in html page
 		Map<String, Object> vm = new HashMap<String, Object>();
 
+
+
 		vm.put("title", "Edit");
 
-		response.redirect(WebServer.HOME_URL);
-		return null;
+		return templateEngine.render(new ModelAndView(vm, "edit.ftl"));
 	}
 }

@@ -15,10 +15,10 @@ public class WebServer {
 	public static final String SETTINGS_URL = "/Settings";
 	public static final String STATS_URL = "/Stats";
 	public static final String TASKS_URL = "/Tasks";
-	public static final String ADD_TASK_URL = "/AddTask";
-	public static final String COMPLETE_TASK_URL = "/CompleteTask";
-	public static final String EDIT_TASK_URL = "/EditTask";
-	public static final String REMOVE_TASK_URL = "/RemoveTask";
+	public static final String ADD_TASK_URL = "/Add";
+	public static final String COMPLETE_TASK_URL = "/Complete";
+	public static final String EDIT_TASK_URL = "/Edit";
+	public static final String REMOVE_TASK_URL = "/Remove";
 
 
 	//utils
@@ -57,5 +57,6 @@ public class WebServer {
 		post(COMPLETE_TASK_URL, new PostCompleteTaskRoute(templateEngine, taskManager));
 		post(EDIT_TASK_URL, new PostEditTaskRoute(templateEngine));
 		post(REMOVE_TASK_URL, new PostRemoveTaskRoute(templateEngine));
+		post(TASKS_URL, new PostTasksRoute(templateEngine, taskManager));
 	}
 }
